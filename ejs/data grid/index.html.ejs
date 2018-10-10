@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <% if (site.gtm_id) { %>
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer',"<%= site.gtm_id %>");</script>
+            <!-- End Google Tag Manager -->
+        <% } %>
+        <meta charset="utf-8">
+        <title><%= page.headline %> | <%= site.seo_name %></title>
+        <link rel="stylesheet" type="text/css" href="<%= AWS_S3_ENDPOINT %>/lib/proto-app-lib.min.css">
+        <link rel="stylesheet" type="text/css" href="<%= AWS_S3_ENDPOINT %>/lib/proto-app-style.min.css">
+        <link rel="stylesheet" type="text/css" href="<%= AWS_S3_ENDPOINT %>/<%= template_page_s3 %>/proto-app-grid.min.css">
+        <link rel="stylesheet" type="text/css" href="<%= AWS_S3_ENDPOINT %>/lib/proto-app-fonts.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <% if (site.favicon_url) { %>
+            <link rel="icon" type="image/png" href="<%= site['favicon_url'] %>" />
+        <% } %>
+        <% if (page.meta_keywords) { %>
+            <meta name="keywords" content="<%= page.meta_keywords %>" />
+        <% } %>
+        <!-- Facebook Meta Tags -->
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="<%= page.html_key %>">
+        <meta property="og:site_name" content="<%= site.seo_name %>">
+        <meta property="og:title" content="<%= page.headline %>">
+        <meta property="og:updated_time" content="<%= page.published_at %>">
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="<%= site.seo_name %>">
+        <meta name="twitter:url" content="<%= page.html_key %>">
+        <meta name="twitter:title" content="<%= page.headline %>">
+        <% if (page.share_text_facebook) { %>
+            <meta property="og:description" content="<%= page.share_text_facebook %>" />
+        <% } %>
+        <% if (page.share_text_twitter) { %>
+            <meta name="twitter:description" content="<%= page.share_text_twitter %>" />
+        <% } %>
+        <% if (page.meta_description) { %>
+            <meta name="description" content="<%= page.meta_description %>" />
+        <% } %>
+        <% if (page.cover_image_url) { %>
+            <meta property="og:image" content="<%= page.cover_image_url %>">
+            <meta name="twitter:image" content="<%= page.cover_image_url %>">
+        <% } %>
+        <style>
+            .proto-card .by-time-line .time-ago{
+                color: <%- site.house_colour %>;
+            }
+            .why-col, .filter-title, .protograph-close-modal, .protograph-app-active-tab {
+                background: <%- site.house_colour %>;
+            }
+            .active-tab {
+                color: <%- site.house_colour %>;
+                border-color: <%- site.house_colour %>; }
+            .protograph-filter-item:hover .protograph-filter-item-name{
+                color: <%- site.house_colour %>;
+            }
+            .article-share-icons{
+                background: <%- site.house_colour %>;
+            }
+            .protograph-filter-item:hover {
+                border-left: 2px solid <%- site.house_colour %>;
+                color: <%- site.house_colour %>;
+            }
+            .protograph-filter-item-detail.protograph-show-more-filters .protograph-filter-item {
+                border-left: 2px solid <%- site.house_colour %>;
+            }
+        </style>
+        <script>var newOpera = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);if(window.newOpera){ $('body').addClass('operaBody'); }</script>
+        <link rel="stylesheet" type="text/css" href="<%= AWS_S3_ENDPOINT %>/lib/ssr-cards.min.css">
+
+    </head>
+
+    <%
+        function url_parser(url){
+            var match = url.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
+            return match && {
+                href: url,
+                protocol: match[1],
+                host: match[2],
+                hostname: match[3],
+                port: match[4],
+                pathname: match[5],
+                search: match[6],
+                hash: match[7]
+            }
+        }
+
+        function getHost(url) {
+            let urlComponents = url_parser(url);
+            return urlComponents.hostname;
+        }
+
+        function getImagePath(image_name) {
+            return `https://cdn.protograph.pykih.com/Assets/proto-app/img/${image_name}`;
+        }
+
+        function identifySSURL(link) {
+            let social_share_domains = [
+                {
+                    domain: "www.facebook.com",
+                    image_name: "fb-colour-icon.png"
+                },
+                {
+                    domain: "twitter.com",
+                    image_name: "twitter-colour-icon.png"
+                },
+                {
+                    domain: "www.youtube.com",
+                    image_name: "youtube-colour-icon.png"
+                },
+                {
+                    domain: "www.instagram.com",
+                    image_name: "insta-colour-icon.png"
+                }
+            ],
+            url_domain = getHost(link.url);
+
+            for (let i = 0; i < social_share_domains.length; i++) {
+                if (url_domain === social_share_domains[i].domain || (social_share_domains[i].domain.indexOf(url_domain) >= 0)) {
+                    return social_share_domains[i];
+                }
+            }
+            return false;
+        }
+    %>
+
+    <% let language = site.primary_language.toLowerCase(); %>
+    <% let body_class = language !== 'english' ? `language-${language}` : "proto-app-body"; %>
+    <% let site_name = site.name ? `By ${site.name}` : ""; %>
+    <% let ssr_cards = {}; -%>
+
+    <body class="<%= body_class %>">
+        <% if (site.comscore_code) { %>
+            <script>
+                var _comscore = _comscore || [];_comscore.push({ c1: "2", c2: "<%= site.comscore_code %>" }); (function() {var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];s.async = true;s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b")+ ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); })();
+            </script>
+        <% } %>
+
+        <div class="proto-app-navbar-masthead" id="site_header" style="<%= site_header_json['header_background_color'] -%>">
+            <div class="proto-app-navbar-proto-container">
+                <div class="proto-app-navbar-site-logo proto-app-navbar-position-<%= site_header_json['header_logo_position'] -%>">
+                    <a href="<%= site_header_json['header_jump_to_link'] %>" target="_blank" title="<%= site_header_json['header_tooltip'] ? site_header_json['header_tooltip'] : '' %>" >
+                        <img src="<%= site_header_json['header_logo_url'] %>" height="50px" />
+                    </a>
+                </div>
+                <div class="proto-app-navbar-menu-icon">
+                    MENU
+                    <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/menu-icon.png" />
+                </div>
+            </div>
+        </div>
+        <div class="proto-app-navbar-proto-container">
+            <div id="proto_app_header">
+                <div class="proto-app-navbar">
+                    <div class="proto-app-navbar-logo-holder">
+                        <h1 class="proto-app-navbar-project-name" id="homepage_nav">
+                            <% let ref_category_html_name = ref_category_object['name'] -%>
+                            <% let homepage_object = homepage_header_json.filter((e, i) => {
+                                return e.name === ref_category_html_name
+                            })[0] -%>
+                            <a href="<%= homepage_object['url'] -%>" >
+                                <%- homepage_object['name_html'] -%>
+                            </a>
+                        </h1>
+                        <% if(site_header_json['show_by_site_name']) { -%>
+                            <div class="proto-app-navbar-project-by"><%- site_name -%></div>
+                        <% } -%>
+                        <div class="proto-app-navbar-first-navigation">
+                            <span></span>
+                            <div class="fade-effect"></div>
+                            <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-right.png" />
+                        </div>
+                    </div>
+                    <% if(site_header_json['show_proto_logo']) { -%>
+                        <div class="proto-app-navbar-logo">
+                            <a href="https://pro.to" target="_blank">
+                                <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/proto-color-logo.png" class="colored-logo" height="29px" width="26px" />
+                                <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/proto-grey-logo.png" class="grey-logo" height="29px" width="26px" />
+                            </a>
+                        </div>
+                    <% } -%>
+                    <div class="proto-app-navbar-navigation-bar">
+                        <div class="proto-app-navbar-left-click-arrow" id="proto-navbar-prev">
+                            <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-left.png" />
+                        </div>
+                        <div class="proto-app-navbar-page-navigation">
+                            <div class="proto-app-navbar-overlay">
+                                <div class="proto-app-navbar-navigation-scroll" id="vertical_nav">
+                                    <% if(vertical_header_json.Header){ %>
+                                    <% vertical_header_json.Header.forEach((e) => { %>
+                                        <%  let social_share = identifySSURL(e); %>
+                                        <% if (social_share) { %>
+                                            <div class="proto-app-navbar-page-links">
+                                                <a href="<%= e.url %>" target="<%= e.new_window ? '_blank' : '_self' -%>" >
+                                                    <img src="<%= getImagePath(social_share['image_name']) -%>" />
+                                                </a>
+                                            </div>
+                                        <% } else { %>
+                                            <div class="proto-app-navbar-page-links">
+                                                <a href="<%= e.url %>" target="<%= e.new_window ? '_blank' : '_self' %>">
+                                                    <%= e.name %>
+                                                </a>
+                                            </div>
+                                        <% } %>
+                                    <% }) %>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proto-app-navbar-right-click-arrow" id="proto-navbar-next">
+                            <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-right.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pro-container data-page">
+            <div class="pro-col pro-col-16 stick-to-top">
+                <div class="pro-row pro-row-5">
+                    <div id='cover_container' class="cover-tostory-card">
+                        <% streams_mapping['16c_Hero'].cards.forEach(function(card,i) { %>
+                            <% if (ssr_card_code[card.s3_identifier]) { %>
+                                <% let cardContent = ssr_card_code[card.s3_identifier].render({"dataJSON": card.data_json, "mode": mode}) -%>
+
+
+                                <div id="proto_<%= card.view_cast_id %>" class="proto-lazy-load-card" card-id="<%= card.data_url %>" card-instance = "<%= ssr_card_code[card.s3_identifier].instance %>"  card-viewcast-id="<%= card.view_cast_id %>" card-s3="<%= card.s3_identifier %>" data-ssr="true">
+                                    <%- cardContent.content -%>
+                                </div>
+                            <% } else { %>
+                                <div id="proto_<%= card.view_cast_id %>" data-ssr="false" iframe-url="<%= card.iframe_url %>" data-view_cast_id="<%= card.datacast_identifier %>" data-template_card_id="<%= card.s3_identifier %>" >
+                                    <%- card.seo_blockquote %>
+                                </div>
+                            <% } %>
+                        <% }); %>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div id="card-list-div" class="proto-app-main-data-container"></div>
+            </div>
+            <div class="protograph-app-filter-icon" id="protograph_filter_icon">FILTER &#9776;</div>
+            <div class="protograph-app-filter-icon protograph-app-filter-close-button" id="protograph_filter_close_icon">CLOSE <i class="remove icon"></i></div>
+            <div class="pro-col pro-col-16">
+                <div id='footer_container'>
+                <% if (streams_mapping['footer'] !== undefined) { %>
+                    <% streams_mapping['footer'].cards.forEach(function(card,i) { %>
+                        <% if (ssr_card_code[card.s3_identifier]) { %>
+                            <% let cardContent = ssr_card_code[card.s3_identifier].render( {"dataJSON": card.data_json}) %>
+
+                            <div id="proto_<%= card.view_cast_id %>" class="proto-lazy-load-card" card-id="<%= card.data_url %>" card-instance = "<%= ssr_card_code[card.s3_identifier].instance %>"  card-viewcast-id="<%= card.view_cast_id %>" data-ssr="true">
+                                <%- cardContent.content %>
+                            </div>
+                        <% } else { %>
+                            <div id="proto_<%= card.view_cast_id %>" iframe-url="<%= card.iframe_url %>" data-ssr="false" data-view_cast_id="<%= card.datacast_identifier %>" data-template_card_id="<%= card.s3_identifier %>" class="ProtoCard-feeds">
+                                <%- card.seo_blockquote %>
+                            </div>
+                        <% } %>
+                    <% }); %>
+                <% } %>
+                </div>
+            </div>
+        </div>
+
+        <div class="proto-footer">
+            <div class="footer-content-area">
+                <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-left.png" class="left-arrow" id="proto-footer-prev">
+                <div class="links-area">
+                    <div class="links-scroll-area" id='vertical_footer'>
+                    </div>
+                </div>
+                <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/arrow-right.png" class="right-arrow" id='proto-footer-next'>
+                <div class="privacy-details">
+                    <span class="footer-link light-link"><a href="https://www.pro.to">Powered by PROTO</a></span>
+                    <span class="light-link dot-seprater">&#8231;</span>
+                    <span class="footer-link light-link"><a href="https://www.pro.to/legal/terms">Terms</a></span>
+                    <span class="light-link dot-seprater">&#8231;</span>
+                    <span class="footer-link light-link"><a href="https://www.pro.to/legal/privacy">Privacy</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="proto-app-scroll-to-top" title="Scroll to top">
+            <i class="angle up icon"></i>
+        </div>
+        <% let page_object = {}; %>
+        <% ["headline", "cover_image_url", "cover_image_url_7_column", "summary", "id"].forEach(function(e){ %>
+            <% page_object[e] = page[e]; %>
+        <% }); %>
+
+        <% let list_of_cards = Object.keys(ssr_card_code); %>
+        <% list_of_cards.forEach(e => { %>
+            <script src="<%= AWS_S3_ENDPOINT %>/<%= e %>/card.min.js" defer></script>
+        <% }) -%>
+        <script>
+            window.ProtoGraph = window.ProtoGraph || {};
+            ProtoGraph.streams = <%- JSON.stringify(streams || {}) %>;
+            ProtoGraph.site = <%- JSON.stringify(site) %>;
+            ProtoGraph.page = <%- JSON.stringify(page_object) %>;
+            ProtoGraph.ref_category_object = <%- JSON.stringify(ref_category_object) %>;
+
+            ProtoGraph.vertical_header_json_url = "<%- vertical_header_json_url %>";
+            ProtoGraph.homepage_header_json_url = "<%- homepage_header_json_url %>";
+            ProtoGraph.site_header_json_url = "<%- site_header_json_url %>";
+
+            ProtoGraph.vertical_header_json = <%- vertical_header_json.Header? JSON.stringify(vertical_header_json) : JSON.stringify({Header:vertical_header_json}) %>;
+            ProtoGraph.homepage_header_json = <%- JSON.stringify(homepage_header_json) %>;
+            ProtoGraph.site_header_json = <%- JSON.stringify(site_header_json) %>;
+        </script>
+        <% if (site.ga_code) { %>
+            <!-- Global Site Tag (gtag.js) - Google Analytics -->
+            <script defer src="https://www.googletagmanager.com/gtag/js?id=<%= site.ga_code %>"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '<%= site.ga_code %>');
+            </script>
+        <% } %>
+        <script src="<%= AWS_S3_ENDPOINT %>/lib/protoGraph.min.js" defer></script>
+        <script src="<%= AWS_S3_ENDPOINT %>/lib/proto-app-lib.min.js" defer></script>
+        <script src="<%= AWS_S3_ENDPOINT %>/lib/proto-app-init.min.js" defer></script>
+        <script src="<%= AWS_S3_ENDPOINT %>/lib/proto-app-grid-init.min.js" defer></script>
+        <script src="<%= AWS_S3_ENDPOINT %>/<%= template_page_s3 %>/proto-app-grid.min.js" defer></script>
+    </body>
+
+</html>

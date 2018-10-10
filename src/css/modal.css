@@ -1,0 +1,147 @@
+body{
+	padding: 50px;
+}
+
+.modal-conatiner {
+	height: 580px;
+}
+
+.proto-modal{
+	background: #fafafa;
+	border-radius: 4px;
+	height: auto;
+	overflow: hidden;
+	padding: 12px;
+	font-family: "cabin";
+}
+
+.modal-image{
+	background: #efefef;
+	height: 140px;
+	width: 140px;
+	float: right;
+	overflow: hidden;
+	margin-right: 0px !important;
+}
+
+.modal-header{
+	border-bottom: 1px solid #efefef;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	display: inline-block;
+	width: 100%;
+	position: relative;
+}
+
+.modal-title{
+	color: black;
+	font-size: 34px;
+	position: absolute;
+	bottom: 12px;
+	left: 0px;
+	font-family: "cabin";
+	font-weight: bold;
+}
+
+.modal-title .small{
+	font-size: 18px;
+	vertical-align: top;
+	padding-top: 5px;
+	display: inline-block;
+}
+
+.title-pretext{
+	font-size: 13px;
+	margin-bottom: 10px;
+	font-weight: normal;
+	color: #333333;
+}
+
+.modal-close-icon{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background: blue;
+	height: 25px;
+	width: 25px;
+	border-radius: 50px;
+}
+
+.modal-content{
+	font-size: 12px;
+	color: #333333;
+	line-height: 19px;
+}
+
+.content-left{
+	width: 220px;
+}
+
+.content-left strong{
+	color: #e03832;
+}
+
+.content-right{
+	width: 276px;
+	float: right;
+}
+
+.modal-footer{
+	position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding: 12px;
+    border-top: 1px solid #efefef;
+    display: inline-block;
+    width: 100%;
+    line-height: 17px;
+    font-size: 10px;
+    color: #777;
+    box-sizing: border-box;
+}
+
+.hint-text{
+	font-size: 10px;
+	color: #777;
+	line-height: 17px;
+	margin-top: 5px;
+}
+
+.parameter-name{
+	display: inline-block;
+}
+
+.single-parameter{
+	padding-bottom:7px;
+}
+
+.parameter-value{
+	display: inline-block;
+	float: right;
+}
+
+.proto-modal-mobile{
+	height: auto !important;
+}
+
+.proto-modal-mobile .modal-image{
+	height: 80px;
+	width: 80px;
+}
+
+.proto-modal-mobile .modal-title{
+	font-size: 24px;
+}
+
+.proto-modal-mobile .content-left{
+	margin-right: 0px;
+	width: 276px;
+	margin-bottom: 20px;
+}
+
+.proto-modal-mobile .modal-footer{
+	position: relative;
+	padding: 0px;
+	padding-top: 12px;
+	margin-top: 12px;
+}

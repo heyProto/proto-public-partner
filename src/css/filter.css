@@ -1,0 +1,172 @@
+@font-face {
+  font-family: AvenirLTStd-Book;
+  src: url("https://cdn.protograph.pykih.com/lib/AvenirLTStd-Book.otf") format("opentype");
+}
+
+.protograph-filters-container {
+  position: relative;
+  font-family: "AvenirLTStd-Book";
+  margin-bottom: 25px;
+}
+.protograph-filters-header {
+  height: 48px;
+}
+.protograph-filters-active-count {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.protograph-filters-selected-filter-toggle {
+  display: inline-block;
+  padding: 15px 0px;
+  font-size: 14px;
+}
+.protograph-filters-reset-filter {
+  float: right;
+  cursor: pointer;
+  padding: 15px 10px;
+  font-size: 14px;
+}
+.protograph-filters-tabs-container {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  height: 25px;
+}
+.protograph-filters-tab {
+  text-align: center;
+  padding: 10px;
+  display: table-cell;
+  border-bottom: 2px solid #dadada;
+}
+.protograph-filters-tab:hover {
+  cursor: pointer;
+}
+.protograph-filter-items-container {
+  width: 100%;
+  font-family: "AvenirLTStd-Book";
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.protograph-filter-items-container-with-tabs {
+  top: 100px;
+}
+.protograph-filter-item {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+}
+.protograph-filter-item:hover {
+  cursor: pointer;
+  border-left: 2px solid#333333;
+  color:#333333;
+}
+.protograph-filter-item-detail.protograph-show-more-filters .protograph-filter-item {
+  border-left: 2px solid#333333;
+}
+.protograph-filter-item-detail.protograph-show-more-filters .protograph-filter-sub-items-container .protograph-filter-item, .protograph-filter-item-detail.protograph-show-more-filters .protograph-filter-sub-items-container .protograph-filter-item-name {
+  border-left: 1px solid #fafafa;
+  color: rgba(51,51,51,0.75);
+  font-style: italic;
+  font-size: 14px;
+  height: auto;
+}
+
+.protograph-filter-item-name {
+  display: table-cell;
+  width: 90%;
+  padding: 10px;
+  font-size: 12px;
+  color: rgba(0,0,0,0.75);
+}
+
+.protograph-filter-item:hover .protograph-filter-item-name{
+  color:#333333;
+}
+
+.protograph-filters-left-align {
+  text-align: left;
+}
+.protograph-filters-dulled {
+  opacity: 0.5;
+}
+
+.protograph-show-more-filters .protograph-filter-body{
+  /*border-left: 1px solid #efefef;*/
+}
+
+.protograph-filter-item-arrow {
+  display: table-cell;
+  /*padding: 10px 17px;*/
+  width: 10%;
+  text-align: left;
+  font-family: AvenirLTStd-Book;
+  font-size: 14px;
+  font-style: italic;
+}
+.protograph-filter-chevron-icon {
+  display: table-cell;
+  padding: 10px;
+  width: 10%;
+  text-align: right;
+  font-size: 14px;
+  color: rgba(0,0,0,0.75);
+}
+/* .protograph-filter-item-detail.protograph-show-more-filters {
+  height: auto;
+} */
+.protograph-filter-item-detail > .protograph-filter-body {
+  max-height: 0px;
+  overflow: hidden;
+}
+.protograph-filter-item-detail.protograph-show-more-filters > .protograph-filter-body {
+  max-height: 1950px;
+  transition: max-height 350ms ease-out;
+}
+.protograph-filter-body {
+  padding-left: 10px;
+}
+.protograph-filters-remove-filter {
+  color: black !important;
+  padding: 1px 5px;
+  margin-right: 5px;
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  font-size: 10px;
+  display: none;
+}
+.protograph-filter-item.protograph-active-item:hover > .protograph-filter-item-arrow {
+  display: none;
+}
+.protograph-filter-item.protograph-active-item:hover > .protograph-filters-remove-filter {
+  display: block;
+}
+
+.protograph-filter-sub-items-container .protograph-filter-item-name{
+  padding-left: 10px;
+}
+
+.protograph-filter-sub-items-container .protograph-filter-item-name:before{
+  content: "\2014";
+  color: #fafafa;
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+.protograph-filter-hint-text {
+  display: table-cell;
+  font-size: 12px;
+  line-height: 18px;
+  color: #adadad;
+  padding: 15px 10px;
+}
+
+@media only screen and (max-width: 500px) {
+  .protograph-filters-container {
+    /* height: 100vh; */
+    width: 100%;
+  }
+  .protograph-filters-open {
+    top: 50px;
+  }
+}

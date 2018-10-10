@@ -1,0 +1,61 @@
+[
+{
+    "name": "Test 1",
+    "url": "https://www.google.com/",
+    "new_window": true,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Education",
+    "url": "https://www.google.com/",
+    "new_window": true,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Maths",
+    "url": "https://www.google.com/",
+    "new_window": true,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Search",
+    "url": "https://www.google.com/",
+    "new_window": true,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Sheets",
+    "url": "https://www.google.com/",
+    "new_window": false,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "About",
+    "url": "https://www.google.com/",
+    "new_window": false,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Methodology",
+    "url": "https://www.google.com/",
+    "new_window": true,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Testing it out",
+    "url": "https://protograph.pykih.com/accounts/pykih/sites/pyktest/ref_categories/sports-fbe4499b-7ffd-4097-9129-e4f678f58452/site_vertical_navigations",
+    "new_window": true,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Test",
+    "url": "https://pykih.com",
+    "new_window": false,
+    "menu": "Vertical Footer"
+},
+{
+    "name": "Test 2",
+    "url": "https://pykih.com",
+    "new_window": false,
+    "menu": "Vertical Footer"
+}]

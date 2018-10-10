@@ -1,0 +1,102 @@
+@font-face {
+  font-family: AvenirLTStd-Medium;
+  src: url("https://cdn.protograph.pykih.com/lib/AvenirLTStd-Medium.otf") format("opentype"); }
+@font-face {
+  font-family: Avenir-Bold;
+  src: url("https://cdn.protograph.pykih.com/lib/AEH.ttf") format("opentype"); }
+
+.proto-website-grid-card {
+  width: 220px;
+  max-height: 305px;
+  display: inline-block;
+  float: left;
+  background: white;
+  font-family: 'AvenirLTStd-Medium';
+}
+  
+.proto-website-grid-card .single-icon {
+  display: inline-block;
+  float: left;
+  margin-right: 8px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #efefef;
+}
+
+.proto-website-grid-card .single-icon img {
+  height: 20px;
+  width: 20px;
+}
+  
+.proto-website-grid-card .grid-card-cover {
+  margin-bottom: 10px;
+  transition: 0.2s ease-in-out;
+  height: 220px;
+  width: 220px;
+}
+.proto-website-grid-card:hover .grid-card-cover{
+  box-shadow: 0px 0px 5px lightgrey;
+}
+  
+.proto-website-grid-card .grid-card-title{
+  font-family: 'Avenir-Bold';
+  font-size: 22px;
+  color: #333333;
+  line-height: 29px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+  
+.proto-website-grid-card .grid-card-subtitle{
+  font-size: 14px;
+  color: #333333;
+  line-height: 19px;
+  margin-bottom: 24px;
+}
+  
+.proto-website-grid-card p{
+  font-size: 14px;
+  line-height: 22px;
+  color: #666;
+  font-family: arial;
+  margin-bottom: 16px;
+}
+  
+.proto-website-grid-card .more-icons-text{
+  font-size: 12px;
+  line-height: 20px;
+  color: #666;
+  font-family: arial;
+}
+  
+.grid-card-icons-footer{
+  margin-bottom: 16px;
+}
+
+
+.protograph-card {
+    width: 220px;
+    height: 306px;
+    /* cursor: pointer; */
+    display: inline-block;
+    text-align: left;
+    margin-right: 20px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    position: relative;
+    float: left;
+    transition: all 250ms cubic-bezier(.02, .01, .47, 1);
+  }
+
+  .div-without-margin-right{
+    margin-right: 0px;
+  }
+ 
+  @media only screen and (max-width: 450px ) {
+    .protograph-card {
+      margin-right: 0px;
+      float:none;
+    }
+  }

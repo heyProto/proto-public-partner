@@ -1,0 +1,225 @@
+/* Old jaljagran-style.css  */
+@font-face {
+  font-family: AvenirLTStd-Book;
+  src: url("https://cdn.protograph.pykih.com/lib/AvenirLTStd-Book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Avenir-Bold;
+  src: url("https://cdn.protograph.pykih.com/lib/AEH.ttf") format("opentype");
+}
+
+.cover-image {
+  background-image: url("../../../img/cover-image.png");
+  background-repeat: none;
+  background-size: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative; }
+
+.data-page .cover-image {
+  height: 300px; }
+
+
+.clearfix {
+  clear: both; }
+
+
+.tabs.active-area {
+  display: block;
+  text-align: center;
+}
+
+
+.protograph-app-tabs-container {
+  display: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 10; }
+
+.page-title {
+  font-size: 42px;
+  font-weight: bold;
+  /*font-family: 'Sarala', sans-serif;*/
+  color: white;
+  margin-bottom: 20px;
+  bottom: 0px;
+  position: absolute;
+  margin-left: 20px;
+}
+
+ #show-more-cards {
+  width: 20%;
+  background-color: #efefef;
+  border: 0px solid grey;
+  border-radius: 5px;
+  color: white;
+  color: #333333;
+  padding: 11px;
+  margin-right: auto;
+  font-family: AvenirLTStd-Book;
+  font-size: 12px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+#show-more-cards:focus {
+  outline: 0;
+}
+
+.protograph-app-filter-icon, .protograph-app-filter-close-button {
+  display: none;
+  background: white;
+  position: fixed;
+  bottom: 20px;
+  padding: 15px 20px 20px 20px;
+  width: 20%;
+  height: 15px;
+  border-radius: 90px;
+  font-family: AvenirLTStd-Book;
+  font-size: 15px;
+  text-transform: uppercase;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 15px 0px;
+}
+
+.protograph-app-filter-close-button {
+  padding: 17px 20px 18px 20px
+}
+
+.protograph-app-filter-icon-slide-down {
+  bottom: -30px;
+  transition: bottom 500ms ease-out;
+}
+.protograph-app-filter-icon-slide-up {
+  bottom: 20px;
+  transition: bottom 500ms ease-out;
+}
+
+#show-more-cards:focus {
+  outline: 0;
+}
+.protograph-app-map-and-list {
+  float: right;
+  margin-right: 0px;
+}
+
+.protograph-modal-overlay {
+  background: rgba(0,0,0,0.75);
+  position: fixed;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  overflow: auto;
+}
+.protograph-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  min-height: 10px;
+}
+.protograph-modal:focus {
+  outline: none;
+}
+.protograph-close-modal {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  height: 30px;
+  width: 30px;
+  background: #333333;;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.protograph-close-text {
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.protograph-close-text i.icon{
+  margin: 0em 6px 0em 0em !important;
+}
+
+.remove.icon {
+  display: inline;
+}
+@media only screen and (max-width: 500px ) {
+  body {
+    background: white;
+  }
+  .ProtoCard-cover {
+    min-height: 250px;
+    padding: 10px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+  .protograph-gradient{
+    height: 280px;
+  }
+  .protograph-app-navbar {
+    z-index: 110;
+    left: -600px;
+    transition: left 650ms ease-out;
+  }
+  .protograph-app-navbar-slide-in {
+    left: 0px;
+  }
+  .cover-image {
+    display: none;
+  }
+  .protograph-app-map-and-list {
+    width: 100%;
+    /* margin-top: 40px; */
+  }
+  .nav-item {
+    width: 50%;
+    text-align: center;
+  }
+  .protograph-app-filter-icon {
+    display: block;
+  }
+  .protograph-app-filter-close-button {
+    display: none;
+    z-index: 1000;
+  }
+  .protograph-filter-area {
+    position: fixed;
+    top: 1000px;
+    height: 100%;
+    z-index: 1000;
+    padding: 0px;
+    width: 100% !important;
+    background: white;
+    overflow-y: auto;
+  }
+  .protograph-filter-area-slide-up {
+    top: 0px;
+    transition: top 500ms ease-out;
+  }
+   #show-more-cards{
+    margin-left: 0px;
+    margin-top: 10px;
+    transform: translate(0, 0);
+    width: 300px;
+    margin-bottom: 100px;
+  }
+  .protograph-modal {
+    left: 0%;
+    margin-bottom: 10%;
+  }
+
+}

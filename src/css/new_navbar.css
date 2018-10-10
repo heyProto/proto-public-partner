@@ -1,0 +1,521 @@
+/* New Navbar CSS */
+.proto-app-navbar-masthead{
+  display: inline-block;
+  width: 100%;
+  height: 70px;
+  /* background: #233D7A; */
+  box-sizing: border-box;
+  padding: 15px;
+  position: relative;
+  border-bottom: 1px solid #efefef;
+}
+
+.proto-app-navbar-proto-container{
+  width: 1260px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.proto-app-navbar-site-logo{
+  display: inline-block;
+  position: absolute;
+}
+
+.proto-app-navbar-site-logo img{
+  height: auto;
+  max-height: 40px;
+  max-width: 100%;
+}
+
+.proto-app-navbar-position-left{
+  left: 0px;
+}
+
+.proto-app-navbar-position-center{
+  transform: translate(-50%, 0%);
+  left: 50%;
+}
+
+.proto-app-navbar-menu-icon{
+  float: right;
+  line-height: 50px;
+  color: white;
+  font-family: "cabin";
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+.proto-app-navbar-menu-icon img{
+  margin-left: 10px;
+}
+
+.colored-logo{
+  display: none;
+  transition: 0.2s ease-in;
+}
+
+
+.proto-app-navbar-logo:hover  .colored-logo{
+  display: inline-block;
+}
+
+.proto-app-navbar-logo:hover  .grey-logo{
+  display: none;
+}
+
+.proto-app-navbar{
+  width: 1260px;
+  height: 50px;
+  font-size: 14px;
+  font-family: "cabin";
+  color: #4E4E4E;
+  background: white;
+  z-index: 100;
+  border-bottom: 1px solid #efefef;
+}
+
+.proto-app-navbar-logo{
+  display: none;
+  vertical-align: -webkit-baseline-middle;
+    float: right;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    margin-left: 20px;
+    margin-right: 0px;
+    padding-left: 20px;
+    border-left: 1px solid #efefef;
+}
+
+.proto-app-navbar-logo a{
+  height: 30px;
+  display: inline-block;
+}
+
+.proto-app-navbar-project-name{
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  font-family: "bitter";
+  text-transform: uppercase;
+  margin-left: 0px;
+  margin-top: 8px;
+  float: left;
+  margin-bottom: 0px;
+  /* line-height: 50px; */
+}
+.proto-app-navbar-project-name a {
+  color: inherit;
+  text-decoration: none;
+  float: left;
+}
+
+.proto-app-navbar-project-by{
+  display: none;
+  /* display: inline-block; */
+  font-size: 9px;
+  color: #333333;
+  font-family: "cabin";
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+  line-height: 50px;
+  float: left;
+}
+
+.proto-app-navbar-page-links, .proto-app-navbar-first-navigation span{
+  font-family: "cabin";
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: 50px;
+  padding-left: 30px;
+  float: left;
+  box-sizing: border-box;
+}
+.proto-app-navbar-page-links a {
+  text-decoration: none;
+  color: inherit;
+  float: left;
+}
+
+.proto-app-navbar-page-navigation{
+  float: right;
+  max-width: 600px;
+  /*background: #fafafa;*/
+  overflow-x: scroll;
+  text-align: right;
+  height: 50px;
+  /* height: 65px; */
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  -ms-overflow-style:none;
+  overflow:-moz-srcollbars-none;
+}
+.proto-app-navbar-page-navigation::-webkit-scrollbar{
+  width:0 !importants;
+}
+
+.proto-app-navbar-left-click-arrow{
+  /* display: inline-block; */
+  display: none;
+  position: absolute;
+  right: 500px;
+  z-index: 100;
+  padding-top: 16px;
+  height: 50px;
+  box-sizing: border-box;
+    width: 100px;
+    cursor: pointer;
+  background: -webkit-linear-gradient(left,#ffffff,#ffffff00); /*Safari 5.1-6*/
+  background: -o-linear-gradient(left,#ffffff,#ffffff00); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(left,#ffffff,#ffffff00); /*Fx 3.6-15*/
+  background: linear-gradient(to right, #ffffff, #ffffff00); /*Standard*/
+}
+
+.proto-app-navbar-right-click-arrow{
+  /* display: inline-block; */
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 50px;
+  width: 100px;
+  padding-top: 16px;
+  box-sizing: border-box;
+    text-align: right;
+    cursor: pointer;
+  background: -webkit-linear-gradient(left,#ffffff00,#ffffff); /*Safari 5.1-6*/
+  background: -o-linear-gradient(left,#ffffff00,#ffffff); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(left,#ffffff00,#ffffff); /*Fx 3.6-15*/
+  background: linear-gradient(to right, #ffffff00, #ffffff); /*Standard*/
+}
+
+.proto-app-navbar-first-navigation {
+  display: none;
+}
+
+.proto-app-navbar-navigation-bar, .proto-app-navbar-logo-holder{
+  display: inline-block;
+}
+.proto-app-navbar-navigation-bar {
+  position: relative;
+  float: right;
+}
+.proto-app-navbar-menu-icon {
+  display: none;
+}
+
+.mobile-only{
+  display: none;
+}
+
+.proto-app-fixed-navbar {
+  position: fixed;
+  /* top: 0px; */
+  /* transition: top 100ms ease-in; */
+  z-index: 100;
+}
+
+.proto-app-navbar-page-links a img{
+  margin-top: 17px;
+  height: 15px;
+  width: 15px;
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.proto-app-navbar-page-links a:hover img{
+  -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/*Footer CSS*/
+
+.proto-footer{
+    display: inline-block;
+    width: 100%;
+    /*position: absolute;
+    bottom: 0px;*/
+    border-top: 1px solid #efefef;
+    box-shadow: 0px 0px 3px #f7f7f7;
+    left: 0px;
+    margin-top: 20px;
+}
+
+.proto-footer .footer-content-area{
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 1260px;
+}
+
+.proto-footer .footer-link{
+    font-size: 12px;
+    font-family: "cabin";
+    color: #333333;
+    line-height: 70px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+.proto-footer .footer-link a:visited,.proto-footer .footer-link a:hover,.proto-footer .footer-link a:link,.proto-footer .footer-link a:active {
+    color: #333333;
+    text-decoration: none;
+}
+
+.proto-footer .links-area{
+    float: left;
+    display: inline-block;
+    width: 400px;
+    overflow: scroll;
+    height: 70px;
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+
+.proto-footer .links-area::-webkit-scrollbar{
+  width:0 !important;
+}
+
+.proto-footer .links-area::-webkit-scrollbar { width: 0 !important }
+
+.proto-footer ::-webkit-scrollbar{
+    display: none;
+}
+
+.proto-footer .privacy-details{
+    float: right;
+}
+
+.proto-footer .light-link{
+    opacity: 0.5;
+}
+
+.proto-footer .dot-seprater{
+    opacity: 0.3
+}
+
+.proto-footer .dot-seprater{
+    margin-right: 5px;
+    margin-left: 5px;
+    line-height: 70px;
+}
+
+.proto-footer .links-scroll-area{
+    display: inline-block;
+    width: 380px;
+    height: 70px;
+}
+
+.proto-footer .left-arrow{
+    display: none;
+    float: left;
+    line-height: 70px;
+    padding-top: 29px;
+    margin-right: 15px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.proto-footer .right-arrow{
+    display: none;
+    float: left;
+    line-height: 70px;
+    padding-top: 29px;
+    margin-left: 15px;
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+/*===== end of footer css =====*/
+
+@media only screen and (max-width: 400px){
+    .desktop-only{
+      display: none;
+    }
+    .mobile-only{
+      display: block;
+    }
+    .proto-app-navbar-proto-container{
+        width: 100%;
+    }
+    .proto-app-navbar-position-center{
+        transform: translate(0%, 0%);
+        left: 0;
+    }
+    .proto-app-navbar{
+        padding: 0px 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .proto-app-navbar-project-name{
+        font-size: 18px;
+        margin-left: 5px;
+    }
+    /* .proto-app-navbar-project-by{
+        font-size: 10px;
+        margin-left: 5px;
+        display: none;
+    } */
+    .proto-app-navbar-page-navigation{
+        width: 100%;
+        box-sizing: border-box;
+        float: left;
+    text-align: left;
+    max-width: 100%;
+    -ms-overflow-style:none;
+    overflow: -moz-scrollbars-none;
+    }
+    .proto-app-navbar-page-navigation::-webkit-scrollbar{
+      width:0 !importants;
+    }
+    .proto-app-navbar-left-click-arrow{
+        left: 0px;
+    }
+    .proto-app-navbar-right-click-arrow{
+        padding-right: 0px;
+    }
+    .proto-app-footer-left-click-arrow{
+        left: 0px;
+    }
+    .proto-app-footer-right-click-arrow{
+        padding-right: 0px;
+    }
+
+    .proto-app-navbar-logo{
+      margin-right: 5px;
+      display: none !important;
+    }
+
+    .proto-app-navbar-navigation-bar{
+        position: relative;
+    display: inline-block;
+    opacity: 0;
+    /* display: none; */
+        width: 100%;
+    }
+    /* .proto-app-navbar-page-links{
+        margin-right: 20px;
+        margin-left: 0px;
+    } */
+    .proto-app-navbar-first-navigation{
+        display: inline-block;
+        float: right;
+        line-height: 50px;
+        font-size: 12px;
+    }
+    .proto-app-navbar-first-navigation img{
+        margin-left: 10px;
+        height: 12px;
+  }
+  .proto-app-navbar-logo-holder {
+    width: 100%;
+  }
+  .fade-effect{
+    position: absolute;
+    height: 50px;
+    width: 100px;
+    top: 0px;
+    right: 0px;
+    background: -webkit-linear-gradient(left,#ffffff00,#ffffff); /*Safari 5.1-6*/
+    background: -o-linear-gradient(left,#ffffff00,#ffffff); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(left,#ffffff00,#ffffff); /*Fx 3.6-15*/
+    background: linear-gradient(to right, #ffffff00, #ffffff); /*Standard*/
+  }
+  .proto-app-navbar-right-click-arrow, .proto-app-navbar-left-click-arrow{
+    width: 30px;
+  }
+  .proto-app-fixed-navbar{
+    width: 100%;
+  }
+
+    .proto-app-footer-right-click-arrow{
+        position: absolute;
+        right: 3px;
+    }
+
+    .proto-app-footer-left-click-arrow{
+        position: absolute;
+        left: -90px
+    }
+
+    .proto-app-navbar-page-footer {
+        width: 100%;
+    }
+
+    /*=== footer mobile css ====*/
+
+    .proto-footer{
+      margin-top: 20px;
+    }
+
+  .proto-footer .footer-content-area{
+      height: 50px;
+      width: 100%;
+  }
+
+  .proto-footer .privacy-details {
+      float: left;
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      text-align: center;
+  }
+
+  .proto-footer .links-area {
+    width: 80%;
+      margin-left: 50%;
+      display: inline-block;
+      transform: translate(-50%,0px);
+      height: 50px;
+      -ms-overflow-style:none;
+      overflow: -moz-scrollbars-none;
+  }
+
+  .proto-footer .links-area::-webkit-scrollbar{
+    width:0 !important;
+  }
+
+  .proto-footer .links-scroll-area{
+      height: 50px;
+  }
+
+  .proto-footer .right-arrow{
+    position: absolute;
+    right: 15px;
+    line-height: 50px;
+    padding-top: 20px;
+  }
+
+  .proto-footer .left-arrow{
+      line-height: 50px;
+      position: absolute;
+    left: 15px;
+    padding-top: 20px;
+  }
+
+  .links-scroll-area{
+    height: 40px;
+  }
+
+  .proto-footer .footer-link{
+      line-height: 50px;
+  }
+
+  .proto-footer .dot-seprater{
+      line-height: 50px;
+  }
+
+
+
+  /*==== end of footer mobile css =====*/
+}

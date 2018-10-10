@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>HateCrime Tracker | IndiaSpend</title>
+    <link href="https://fonts.googleapis.com/css?family=Bitter:400,700|Cabin:400,400i,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./proto-app-lib.min.css">
+    <link rel="stylesheet" type="text/css" href="./proto-app-style.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/data.css">
+    <link rel="stylesheet" type="text/css" href="./src/css/filter.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="./proto-app-grid.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="./proto-app-fonts.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <link rel="icon" type="image/png" href="https://d8iy6v3lrjtwm.cloudfront.net/images/JagranNews/e4c4cb2201515439/2365.vnd.microsoft.icon"
+    />
+
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="stories/data-11">
+    <meta property="og:site_name" content="JagranNews">
+    <meta property="og:title" content="आँकड़े                                                                                    ">
+    <meta property="og:updated_time" content="2018-03-21T18:44:22.000Z">
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="JagranNews">
+    <meta name="twitter:url" content="stories/data-11">
+    <meta name="twitter:title" content="आँकड़े                                                                                    ">
+
+
+    <meta property="og:image" content="https://d8iy6v3lrjtwm.cloudfront.net/images/JagranNews/4779f06ff1581ab9/2643.jpeg">
+    <meta name="twitter:image" content="https://d8iy6v3lrjtwm.cloudfront.net/images/JagranNews/4779f06ff1581ab9/2643.jpeg">
+</head>
+
+
+
+
+<body>
+    <div class="proto-grid-container data-page">
+
+        <div class="client-brand-cover small-cover" id="site_header">
+            <div class="client-logo"></div>
+        </div>
+        <div class="proto-col col-16 proto-verticals-navbar">
+            <div class="proto-vertical-name" id="homepage_nav">
+                <h1 class="navbar-project-title"><span style='font-weight:normal'>#</span>जलजागरण</h1>
+                <i class="chevron down icon proto-hide"></i>
+            </div>
+            <div class="page-navigation-options" id="vertical_nav"></div>
+            <div class="pnav-options single-pnav-option" id="homepage_nav_list"></div>
+            <div class="social right-float-div">
+
+                <div class="single-link facebook">
+                    <a href="https://www.facebook.com/dainikjagran" target="_blank">
+                                <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/fb-white.png">
+                            </a>
+                </div>
+
+
+                <div class="single-link twitter">
+                    <a href="https://twitter.com/JagranNews" target="_blank">
+                                <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/tw-white.png">
+                            </a>
+                </div>
+
+
+                <div class="single-link">
+                    <a href="https://p.jagran.com/339d52dd65eb74feb096344a/index.xml" target="_blank">
+                                <img src="https://cdn.protograph.pykih.com/Assets/rss-white-icon.png" height="14px" width="14px">
+                            </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="mobile-navigation">
+            <div class="mobile-navbar">
+                <div class="branding">
+                    <h1 class="navbar-project-title"><span style='font-weight:normal'>#</span>जलजागरण</h1>
+                    <i class="chevron down icon proto-hide"></i>
+                </div>
+                <div class="right-float-div">
+                    <div class="hamburger-icon"><img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/hamburger-icon.png"></div>
+                </div>
+                <div class="pnav-options single-pnav-option" id="mobile_homepage_nav_list"></div>
+            </div>
+
+            <div class="mobile-navigations-screen">
+                <div class="right-float-div">
+                    <div class="close-icon"><i class="remove icon"></i></div>
+                </div>
+                <div class="nav-links"></div>
+                <div class="social bottom-pull-div">
+
+                    <div class="single-link facebook">
+                        <a href="https://www.facebook.com/dainikjagran" target="_blank">
+                                    <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/fb-black.png">
+                                </a>
+                    </div>
+
+
+                    <div class="single-link twitter">
+                        <a href="https://twitter.com/JagranNews" target="_blank">
+                                    <img src="https://cdn.protograph.pykih.com/Assets/proto-app/img/tw-black.png">
+                                </a>
+                    </div>
+
+
+                    <div class="single-link">
+                        <a href="https://p.jagran.com/339d52dd65eb74feb096344a/index.xml" target="_blank">
+                                    <img src="https://cdn.protograph.pykih.com/Assets/rss-white-icon.png" height="14px" width="14px">
+                                </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="proto-col col-16">
+            <div id="col_16_cover_container"></div>
+            <div class="clearfix"></div>
+            <div id="card-list-div" class="proto-app-main-data-container"></div>
+        </div>
+        <div class="protograph-app-filter-icon" id="protograph_filter_icon">FILTER &#9776;</div>
+        <div class="protograph-app-filter-icon protograph-app-filter-close-button" id="protograph_filter_close_icon">CLOSE <i class="remove icon"></i></div>
+    </div>
+    <div class="proto-app-scroll-to-top" title="Scroll to top">
+        <i class="angle up icon"></i>
+    </div>
+
+    <script>
+        window.ProtoGraph = window.ProtoGraph || {};
+        //https://duxxuzyhk2mdg.cloudfront.net
+        //https://dnt71st2q6cqr.cloudfront.net
+        ProtoGraph.streams = {
+            "Grid": {
+                "id": 651,
+                "title": "11_Data_Grid",
+                "datacast_identifier": "bfe798d00804fcffc93bcb92",
+                "url": "https://d2izuvkqhcn1gq.cloudfront.net/3085c3451ef0813e425ca73d/index.json",
+                "name_of_stream": "11_Section_data"
+            },
+            "16c_Hero":{"id":2327,"title":"453_Data_16c_Hero","datacast_identifier":"c66a590e23e9c37bef06875b","url":"https://d2a8orkbl0gwbe.cloudfront.net/c66a590e23e9c37bef06875b/index.json","name_of_stream":"Hero"
+            }
+        };
+        ProtoGraph.site = {
+            "dis_qus_integration": "",
+            "youtube_url": "https://www.youtube.com/channel/UCSKgOW8Pg_eZymYJyJc432g",
+            "instagram_url": "",
+            "twitter_url": "https://twitter.com/JagranNews",
+            "facebook_url": "https://www.facebook.com/dainikjagran",
+            "house_colour": "#333333",
+            "reverse_house_colour": "#ffffff",
+            "font_colour": "#ffffff",
+            "reverse_font_colour": "#ffffff",
+            "logo_url": "https://d8iy6v3lrjtwm.cloudfront.net/images/JagranNews/699619bd6f4cbca1/2637.png",
+            "favicon_url": "https://d8iy6v3lrjtwm.cloudfront.net/images/JagranNews/e4c4cb2201515439/2365.vnd.microsoft.icon",
+            "ga_code": 'UA-117995620-1',
+            "story_card_style": "Clear: Color",
+            "primary_language": "Hindi",
+            "seo_name": "JagranNews",
+            "is_lazy_loading_activated": true
+        };
+        ProtoGraph.page = {
+            "headline": "Deployment Approach 4 - Promote 1 HP and sub-HP pump",
+            "cover_image_url": "https://next.pro.to/images/proto-5febe6e5-dafe-4c7e-903c-6abb2f8e0c53/b317cc7441c00ab3/6415.png",
+            "cover_image_url_7_column": "https://d8iy6v3lrjtwm.cloudfront.net/images/JagranNews/416b1d13e1acad24/2440.jpeg",
+            "filterConfigsURL": "./data/har-khet-ko-pani.json"
+        };
+        ProtoGraph.ref_category_object = {
+            "name": "जलजागरण",
+            "name_html": "<span style='font-weight:normal'>#</span>जलजागरण"
+        };
+        ProtoGraph.vertical_header_json_url = "https://p.jagran.com/jaljagran/navigation.json";
+        ProtoGraph.homepage_header_json_url = "https://p.jagran.com/verticals.json";
+        ProtoGraph.site_header_json_url = "https://p.jagran.com/header.json";
+
+        //show filter button only after scrolling down
+        $(document).ready(function () {
+        $('#protograph_filter_icon').css({'display': 'none', 'transition': 'bottom 0.35s', 'transition-timing-function': 'ease-in'});
+        $(window).scroll(function () {
+            if ($(window).width() < 500) {
+                if ($(this).scrollTop() > $(window).height()/2) {
+                $('#protograph_filter_icon').css({'bottom': '20px', 'display': 'inline-block'});
+                } else {
+                    $('#protograph_filter_icon').css('bottom', '-100px');
+                }
+            }
+        });
+    });
+    </script>
+    <script src="https://cdn.protograph.pykih.com/lib/protoGraph.min.js" defer></script>
+    <script type="text/javascript" src="./proto-app-lib.min.js" defer></script>
+    <script src="./proto-app-init.min.js" defer></script>
+    <script type="text/javascript" src="./proto-app-grid-init.min.js" defer></script>
+    <script type="text/javascript" src="./proto-app-grid.min.js" defer></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117995620-1"></script>
+    <!-- <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-117995620-1');
+
+    </script> -->
+
+</body>
+
+</html>
